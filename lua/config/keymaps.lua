@@ -51,6 +51,7 @@ map("n", "<leader>tt", function()
   Snacks.terminal(nil, { cwd = LazyVim.root() })
 end, { desc = "Terminal (Root Dir)" })
 map("t", "<C-d>", "<cmd>close<cr>", { desc = "Close terminal" })
+map("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode", noremap = true, silent = true })
 
 -- commenting
 map("n", "<A-/>", "<cmd>normal gcc<cr>", { desc = "Comment line" })
