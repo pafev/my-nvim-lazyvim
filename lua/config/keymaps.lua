@@ -12,6 +12,9 @@ del("n", "<C-Right>")
 del("n", "<S-h>")
 del("n", "<S-l>")
 
+del("n", "<leader>-")
+del("n", "<leader>|")
+
 local map = vim.keymap.set
 
 -- move lines
@@ -36,6 +39,8 @@ map("n", "<S-PageUp>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<S-Down>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<S-Up>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<S-PageDown>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+map("n", "<leader>w<Down>", "<C-W>s", { desc = "Split Window Below", remap = true })
+map("n", "<leader>w<Right>", "<C-W>v", { desc = "Split Window Right", remap = true })
 
 -- Resize window using <ctrl> hjkl keys
 map("n", "<C-k>", "<cmd>resize +2<cr>")
@@ -67,8 +72,8 @@ map("n", "<S-A-Up>", "yyP")
 map("i", "<S-A-Up>", "<esc>yyPi")
 map("n", "<S-A-Down>", "yyp")
 map("i", "<S-A-Down>", "<esc>yyPi")
-map("x", "<tab>", ">>")
-map("x", "<S-tab>", "<<")
+map("x", "<tab>", ">")
+map("x", "<S-tab>", "<")
 -- map("n", "<C-S-Up>", "<Plug>(VM-Add-Cursor-Up)")
 -- map("n", "<C-S-Down>", "<Plug>(VM-Add-Cursor-Down)")
 

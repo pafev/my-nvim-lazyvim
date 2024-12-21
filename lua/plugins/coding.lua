@@ -29,4 +29,15 @@ return {
     lazy = false,
     branch = "master",
   },
+  {
+    "echasnovski/mini.surround",
+    recommended = true,
+    opts = function(_, opts)
+      opts.mappings = {
+        add = "sa", -- Add surrounding in Normal and Visual modes
+        delete = "sd", -- Delete surrounding
+        highlight = "sh", -- Highlight surrounding
+      }
+    end,
+  },
 }
