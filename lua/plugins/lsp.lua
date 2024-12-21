@@ -16,12 +16,17 @@ return {
     end,
   },
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
+    "neovim/nvim-lspconfig",
+    event = "LazyFile",
     opts = function(_, opts)
       opts.diagnostics.update_in_insert = true
       opts.document_highlight = {
         enabled = false,
+      }
+      opts.diagnostics.virtual_text = false
+      opts.inlay_hints.exclude = {
+        "vue",
+        "typescript",
       }
       return opts
     end,
