@@ -15,6 +15,12 @@ del("n", "<S-l>")
 del("n", "<leader>-")
 del("n", "<leader>|")
 
+del("n", "<leader>be")
+del("n", "<leader>fe")
+del("n", "<leader>fE")
+del("n", "<leader>E")
+del("n", "<leader>,")
+
 local map = vim.keymap.set
 
 -- move lines
@@ -49,12 +55,6 @@ map("n", "<C-h>", "<cmd>vertical resize -2<cr>")
 map("n", "<C-l>", "<cmd>vertical resize +2<cr>")
 
 -- terminals
-map("n", "<leader>tT", function()
-  Snacks.terminal()
-end, { desc = "Terminal (cwd)" })
-map("n", "<leader>tt", function()
-  Snacks.terminal(nil, { cwd = LazyVim.root() })
-end, { desc = "Terminal (Root Dir)" })
 map("t", "<C-d>", "<cmd>close<cr>", { desc = "Close terminal" })
 map("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode", noremap = true, silent = true })
 
@@ -74,8 +74,8 @@ map("n", "<S-A-Down>", "yyp")
 map("i", "<S-A-Down>", "<esc>yyPi")
 map("x", "<tab>", ">")
 map("x", "<S-tab>", "<")
--- map("n", "<C-S-Up>", "<Plug>(VM-Add-Cursor-Up)")
--- map("n", "<C-S-Down>", "<Plug>(VM-Add-Cursor-Down)")
+map("n", "<C-S-Up>", "<Plug>(VM-Add-Cursor-Up)")
+map("n", "<C-S-Down>", "<Plug>(VM-Add-Cursor-Down)")
 
 -- dont save deleted chars in clipboard
 map("n", "x", '"_x')
