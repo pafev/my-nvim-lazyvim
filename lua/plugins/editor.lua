@@ -13,7 +13,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
     opts = function(_, opts)
-      opts.window.width = 34
+      opts.window.position = "float"
       opts.window.mappings = {
         ["l"] = "open",
         ["h"] = "close_node",
