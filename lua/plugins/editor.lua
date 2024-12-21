@@ -39,12 +39,21 @@ return {
           end,
         },
       }
+      opts.filesystem.filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      }
+      opts.close_if_last_window = false
       return opts
     end,
   },
   {
     "adelarsq/image_preview.nvim",
     event = "VeryLazy",
+  },
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
   },
   {
     "stevearc/oil.nvim",
