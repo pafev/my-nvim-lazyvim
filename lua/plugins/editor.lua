@@ -16,21 +16,28 @@ return {
       {
         "-",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root() })
+          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "float" })
         end,
         desc = "Explorer NeoTree (Root Dir)",
       },
       {
         "_",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+          require("neo-tree.command").execute({ toggle = true, source = "buffers" })
         end,
-        desc = "Explorer NeoTree (cwd)",
+        desc = "Buffer Explorer",
       },
-      { "<leader>e", "-", desc = "Explorer NeoTree (Root Dir)", remap = true },
+      {
+        "<leader>e",
+        function()
+          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "left" })
+        end,
+        desc = "Explorer NeoTree (Root Dir) in left",
+      },
     },
     opts = function(_, opts)
       opts.window.position = "float"
+      opts.window.width = 32
       opts.window.mappings = {
         ["l"] = "open",
         ["h"] = "close_node",
