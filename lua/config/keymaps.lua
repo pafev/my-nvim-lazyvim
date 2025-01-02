@@ -33,9 +33,13 @@ map("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", 
 
 -- buffers
 map("n", "<C-PageUp>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
+map("i", "<C-PageUp>", "<esc><cmd>BufferLineCyclePrev<cr>a", { desc = "Prev Buffer" })
 map("n", "<C-S-PageUp>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Buffer Prev" })
+map("i", "<C-S-PageUp>", "<esc><cmd>BufferLineMovePrev<cr>a", { desc = "Move Buffer Prev" })
 map("n", "<C-PageDown>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
+map("i", "<C-PageDown>", "<esc><cmd>BufferLineCycleNext<cr>a", { desc = "Next Buffer" })
 map("n", "<C-S-PageDown>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move Buffer Next" })
+map("i", "<C-S-PageDown>", "<esc><cmd>BufferLineMoveNext<cr>a", { desc = "Move Buffer Next" })
 map("n", "<C-d>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
@@ -74,15 +78,19 @@ map("n", "<S-A-Down>", "yyp")
 map("i", "<S-A-Down>", "<esc>yyPi")
 map("x", "<tab>", ">")
 map("x", "<S-tab>", "<")
-map("n", "<C-S-Up>", "<Plug>(VM-Add-Cursor-Up)")
-map("n", "<C-S-Down>", "<Plug>(VM-Add-Cursor-Down)")
+map({ "n", "x" }, "<C-Right>", "e")
+map({ "n", "x" }, "<C-Left>", "b")
 
 -- dont save deleted chars in clipboard
 map("n", "x", '"_x')
-map({ "n", "x" }, "d", '"_d')
-map("n", "dd", '"_dd')
+map({ "n", "x" }, "d", '"_d', { noremap = true })
+map("n", "D", '"_D', { noremap = true })
 map("n", "c", '"_c')
 
+-- dont exit visual mode after yank
+map("x", "y", "ygv")
+
+-- easy diagnostics
 map("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end)

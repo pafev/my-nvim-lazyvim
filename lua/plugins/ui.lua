@@ -48,4 +48,33 @@ return {
       return opts
     end,
   },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      terminal_colors = false,
+      extensions = {
+        fzflua = false,
+      },
+    },
+  },
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    priority = 1000,
+    opts = function(_, opts)
+      opts.transparent_background = true
+      return opts
+    end,
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    event = "VeryLazy",
+    cond = vim.g.neovide == nil,
+    opts = {
+      smear_between_buffers = false,
+    },
+  },
 }

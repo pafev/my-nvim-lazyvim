@@ -15,3 +15,4 @@ opt.backspace = { "start", "eol", "indent" }
 opt.splitright = true
 opt.splitkeep = "cursor"
 opt.formatoptions:append({ "r" })
+opt.scrolloff = 999

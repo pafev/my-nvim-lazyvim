@@ -24,10 +24,7 @@ return {
         enabled = false,
       }
       opts.diagnostics.virtual_text = false
-      opts.inlay_hints.exclude = {
-        "vue",
-        "typescript",
-      }
+      opts.inlay_hints.enabled = false
       return opts
     end,
   },

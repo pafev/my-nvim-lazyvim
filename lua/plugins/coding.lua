@@ -40,4 +40,8 @@ return {
       }
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {},
+  },
 }

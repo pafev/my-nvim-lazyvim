@@ -23,7 +23,7 @@ return {
       {
         "_",
         function()
-          require("neo-tree.command").execute({ toggle = true, source = "buffers" })
+          require("neo-tree.command").execute({ toggle = true, source = "buffers", position = "float" })
         end,
         desc = "Buffer Explorer",
       },
@@ -36,7 +36,6 @@ return {
       },
     },
     opts = function(_, opts)
-      opts.window.position = "float"
       opts.window.width = 32
       opts.window.mappings = {
         ["l"] = "open",
@@ -79,27 +78,4 @@ return {
     "catgoose/nvim-colorizer.lua",
     event = "BufReadPre",
   },
-  -- {
-  --   "stevearc/oil.nvim",
-  --   config = function()
-  --     function _G.get_oil_winbar()
-  --       local dir = require("oil").get_current_dir()
-  --       if dir then
-  --         return vim.fn.fnamemodify(dir, ":~")
-  --       else
-  --         -- If there is no current directory (e.g. over ssh), just show the buffer name
-  --         return vim.api.nvim_buf_get_name(0)
-  --       end
-  --     end
-  --     require("oil").setup({
-  --       win_options = {
-  --         winbar = "%!v:lua.get_oil_winbar()",
-  --       },
-  --       view_options = {
-  --         show_hidden = true,
-  --       },
-  --     })
-  --     vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
-  --   end,
-  -- },
 }
