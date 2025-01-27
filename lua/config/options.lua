@@ -8,6 +8,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 local opt = vim.opt
 
 opt.linebreak = false
+opt.wrap = true
 opt.relativenumber = false
 vim.g.lazyvim_picker = "fzf"
 vim.g.lazyvim_cmp = "nvim-cmp"
