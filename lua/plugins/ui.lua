@@ -65,4 +65,12 @@ return {
       smear_between_buffers = false,
     },
   },
+  {
+    "datsfilipe/vesper.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  },
 }
