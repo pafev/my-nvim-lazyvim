@@ -29,18 +29,6 @@ return {
     },
   },
   {
-    "projekt0n/github-nvim-theme",
-    name = "github-theme",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      options = {
-        transparent = true,
-        terminal_colors = false,
-      },
-    },
-  },
-  {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
