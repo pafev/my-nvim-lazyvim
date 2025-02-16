@@ -73,4 +73,17 @@ return {
       transparent = true,
     },
   },
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.open = {
+        enable = false,
+      }
+      opts.close = {
+        enable = false,
+      }
+      return opts
+    end,
+  },
 }
