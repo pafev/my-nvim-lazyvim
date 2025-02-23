@@ -17,3 +17,5 @@ opt.splitright = true
 opt.splitkeep = "cursor"
 opt.formatoptions:append({ "r" })
 opt.scrolloff = 999
+
+vim.opt.clipboard = "unnamed,unnamedplus"
