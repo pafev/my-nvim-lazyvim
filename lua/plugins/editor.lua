@@ -38,9 +38,7 @@ return {
     opts = function(_, opts)
       opts.window.width = 32
       opts.window.mappings = {
-        ["l"] = "open",
-        ["h"] = "close_node",
-        -- ["<space>"] = "none",
+        ["<space>"] = "none",
         ["Y"] = {
           function(state)
             local node = state.tree:get_node()
@@ -55,11 +53,16 @@ return {
           end,
           desc = "Open with System Application",
         },
-        ["P"] = { "toggle_preview", config = { use_float = false } },
         ["<space>p"] = {
           function(state)
             vim.cmd("!fim " .. state.tree:get_node().path)
           end,
+        },
+        ["a"] = {
+          "add",
+          config = {
+            show_path = "relative",
+          },
         },
       }
       opts.filesystem.filtered_items = {
