@@ -30,13 +30,14 @@ return {
       {
         "<leader>e",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "left" })
+          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "right" })
         end,
         desc = "Explorer NeoTree (Root Dir) in left",
       },
     },
     opts = function(_, opts)
-      opts.window.width = 32
+      opts.window.position = "right"
+      opts.window.width = 36
       opts.window.mappings = {
         ["<space>"] = "none",
         ["Y"] = {
