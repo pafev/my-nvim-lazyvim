@@ -1,20 +1,32 @@
 return {
-  -- {
-  --   "mason-org/mason.nvim",
-  --   opts = function(_, opts)
-  --     vim.list_extend(opts.ensure_installed, {
-  --       "luacheck",
-  --       "shellcheck",
-  --       "shfmt",
-  --       "tailwindcss-language-server",
-  --       "typescript-language-server",
-  --       "prisma-language-server",
-  --       "css-lsp",
-  --       "prettier",
-  --       "eslint_d",
-  --     })
-  --   end,
-  -- },
+  {
+    "mason-org/mason.nvim",
+    -- opts = function(_, opts)
+    --   vim.list_extend(opts.ensure_installed, {
+    --     "luacheck",
+    --     "shellcheck",
+    --     "shfmt",
+    --     "tailwindcss-language-server",
+    --     "typescript-language-server",
+    --     "prisma-language-server",
+    --     "css-lsp",
+    --     "prettier",
+    --     "eslint_d",
+    --   })
+    -- end,
+    init = function()
+      -- delete some lazygit keymaps
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimKeymaps",
+        once = true,
+        callback = function()
+          pcall(vim.keymap.del, "n", "<leader>gf")
+          pcall(vim.keymap.del, "n", "<leader>gl")
+          pcall(vim.keymap.del, "n", "<leader>gd")
+        end,
+      })
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
