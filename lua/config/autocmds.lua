@@ -24,9 +24,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Disable autoformat for C# files
+-- Disable autoformat for custom type files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "cs", "csharp" },
+  pattern = { "yaml", "yml", "json" },
   callback = function()
     vim.b.autoformat = false
   end,
