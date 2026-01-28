@@ -1,4 +1,6 @@
-# 💤 LazyVim
+## Dependencies
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+- lazygit
+- lazydocker
+- fzf
+- fd (fd-find no Ubuntu) e ripgrep
