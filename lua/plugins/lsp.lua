@@ -1,20 +1,20 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "prisma-language-server",
-        "css-lsp",
-        "prettier",
-        "eslint_d",
-      })
-    end,
-  },
+  -- {
+  --   "mason-org/mason.nvim",
+  --   opts = function(_, opts)
+  --     vim.list_extend(opts.ensure_installed, {
+  --       "luacheck",
+  --       "shellcheck",
+  --       "shfmt",
+  --       "tailwindcss-language-server",
+  --       "typescript-language-server",
+  --       "prisma-language-server",
+  --       "css-lsp",
+  --       "prettier",
+  --       "eslint_d",
+  --     })
+  --   end,
+  -- },
   {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
@@ -28,4 +28,5 @@ return {
       return opts
     end,
   },
+  { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" },
 }

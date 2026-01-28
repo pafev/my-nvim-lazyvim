@@ -37,27 +37,6 @@ return {
     end,
   },
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      terminal_colors = false,
-      extensions = {
-        fzflua = false,
-      },
-    },
-  },
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    priority = 1000,
-    opts = function(_, opts)
-      opts.transparent_background = true
-      return opts
-    end,
-  },
-  {
     "sphamba/smear-cursor.nvim",
     event = "VeryLazy",
     cond = vim.g.neovide == nil,
@@ -74,7 +53,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.animate",
+    "nvim-mini/mini.animate",
     event = "VeryLazy",
     opts = function(_, opts)
       opts.open = {
@@ -91,6 +70,42 @@ return {
     opts = function(_, opts)
       opts.options.section_separators = ""
       return opts
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.gruvbox_material_transparent_background = "2"
+      vim.g.gruvbox_material_disable_terminal_colors = "1"
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_float_style = "dim"
+    end,
+  },
+  {
+    "marko-cerovac/material.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = function(_, opts)
+      opts.disable = {
+        colored_cursor = true,
+        background = true,
+        term_colors = true,
+      }
+      opts.lualine_style = "stealth"
+      opts.high_visibility = {
+        darker = true,
+      }
+      return opts
+    end,
+  },
+  {
+    "kvrohit/rasmus.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.rasmus_transparent = true
     end,
   },
 }

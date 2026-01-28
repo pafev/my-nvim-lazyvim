@@ -21,13 +21,6 @@ return {
         desc = "Explorer NeoTree (Root Dir)",
       },
       {
-        "_",
-        function()
-          require("neo-tree.command").execute({ toggle = true, source = "buffers", position = "float" })
-        end,
-        desc = "Buffer Explorer",
-      },
-      {
         "<leader>e",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "right" })
@@ -54,11 +47,6 @@ return {
           end,
           desc = "Open with System Application",
         },
-        ["<space>p"] = {
-          function(state)
-            vim.cmd("!fim " .. state.tree:get_node().path)
-          end,
-        },
         ["a"] = {
           "add",
           config = {
@@ -73,10 +61,6 @@ return {
       opts.close_if_last_window = false
       return opts
     end,
-  },
-  {
-    "adelarsq/image_preview.nvim",
-    event = "VeryLazy",
   },
   {
     "catgoose/nvim-colorizer.lua",

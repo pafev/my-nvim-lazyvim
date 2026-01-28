@@ -30,8 +30,8 @@ return {
     branch = "master",
   },
   {
-    "echasnovski/mini.surround",
-    recommended = true,
+    "nvim-mini/mini.surround",
+    -- recommended = true,
     opts = function(_, opts)
       opts.mappings = {
         add = "sa", -- Add surrounding in Normal and Visual modes
