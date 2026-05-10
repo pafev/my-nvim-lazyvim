@@ -38,10 +38,20 @@ return {
         delete = "sd", -- Delete surrounding
         highlight = "sh", -- Highlight surrounding
       }
+      return opts
     end,
   },
   {
     "windwp/nvim-ts-autotag",
     opts = {},
+  },
+  {
+    "garymjr/nvim-snippets",
+    opts = function(_, opts)
+      opts.extended_filetypes = {
+        helm = { "yaml" },
+      }
+      return opts
+    end,
   },
 }
