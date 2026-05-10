@@ -49,7 +49,14 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      -- transparent = true,
+      italics = {
+        comments = true, -- Boolean: Italicizes comments
+        keywords = false, -- Boolean: Italicizes keywords
+        functions = false, -- Boolean: Italicizes functions
+        strings = false, -- Boolean: Italicizes strings
+        variables = false, -- Boolean: Italicizes variables
+      },
     },
   },
   {
@@ -104,8 +111,8 @@ return {
     "kvrohit/rasmus.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.g.rasmus_transparent = true
-    end,
+    -- config = function()
+    --   vim.g.rasmus_transparent = true
+    -- end,
   },
 }
