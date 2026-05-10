@@ -2,6 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.g.initial_cwd = vim.fn.getcwd()
+
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
@@ -17,5 +19,7 @@ opt.splitright = true
 opt.splitkeep = "cursor"
 opt.formatoptions:append({ "r" })
 opt.scrolloff = 999
+vim.g.markdown_recommended_style = 0
+opt.conceallevel = 0
 
 vim.opt.clipboard = "unnamed,unnamedplus"

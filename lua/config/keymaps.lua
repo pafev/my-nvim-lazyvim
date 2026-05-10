@@ -57,7 +57,13 @@ map("n", "<C-h>", "<cmd>vertical resize +2<cr>")
 map("n", "<C-l>", "<cmd>vertical resize -2<cr>")
 
 -- terminals
--- map("t", "<C-q>", "<C-\\><C-n>", { desc = "Exit terminal mode", noremap = true, silent = true })
+map("t", "<C-q>", "<C-\\><C-n>", { desc = "Exit terminal mode", noremap = true, silent = true })
+map("n", "<C-/>", function()
+  Snacks.terminal.toggle(nil, { cwd = vim.g.initial_cwd })
+end, { desc = "Terminal (Initial CWD)" })
+map("n", "<C-_>", function()
+  Snacks.terminal.toggle(nil, { cwd = vim.g.initial_cwd })
+end, { desc = "which_key_ignore" })
 
 -- commenting
 map("n", "<A-/>", "<cmd>normal gcc<cr>", { desc = "Comment line" })
