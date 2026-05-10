@@ -16,14 +16,14 @@ return {
       {
         "-",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.g.initial_cwd, position = "float" })
+          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "float" })
         end,
         desc = "Explorer NeoTree (Root Dir)",
       },
       {
         "<leader>e",
         function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.g.initial_cwd, position = "right" })
+          require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "right" })
         end,
         desc = "Explorer NeoTree (Root Dir) in left",
       },
